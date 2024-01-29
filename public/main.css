@@ -37,7 +37,7 @@ nav ul li a:hover  {
     color: #4d5791;
 }
 
-div.hero {
+section.hero {
     height: 350px;
     background-color: #b4c6f0;
     background-image: url('bg.png');
@@ -47,19 +47,19 @@ div.hero {
     padding-top: 40px;
 }
 
-div.hero h1,
-div.hero h2 {
+section.hero h1,
+section.hero h2 {
     text-align: center;
     margin: 0;
 }
 
-div.hero h1 {
+section.hero h1 {
     color: #fff;
     font-size: 4.2em;
     margin-bottom: 20px;
 }
 
-div.hero h2 {
+section.hero h2 {
     color: #4d5791;
 }
 
