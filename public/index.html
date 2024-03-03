@@ -129,16 +129,7 @@
                 datasets: [
                     {
                         data: [],
-                        backgroundColor: [
-                            '#ffcd56',
-                            '#ff6384',
-                            '#36a2eb',
-                            '#fd6b19',
-                            '#4bc0c0',
-                            '#9966ff',
-                            '#ff9f40',
-                            '#e7e9ed',
-                        ]
+                        backgroundColor: []
                     }
                 ],
                 labels: []
@@ -157,6 +148,7 @@
             .then(function (res) {
                 for (var i = 0; i < res.data.myBudget.length; i++) {
                     dataSource.datasets[0].data[i] = res.data.myBudget[i].budget;
+                    dataSource.datasets[0].backgroundColor[i] = res.data.myBudget[i].color;
                     dataSource.labels[i] = res.data.myBudget[i].title;
                 }
                 createChart();
@@ -205,7 +197,7 @@
             .then(function (res) {
                 var color = d3.scale.ordinal()
                     .domain(res.data.myBudget.map(function(d) { return d.title; }))
-                    .range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c", "#ff8c00", "#e7e9ed"]);
+                    .range(res.data.myBudget.map(function(d) { return d.color; }));
 
                 var labels = color.domain();
                 var data = labels.map(function(label){
